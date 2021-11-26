@@ -13,4 +13,4 @@ class Book(models.Model):
     category = models.CharField(max_length=3, choices=book_categories)
 
     def __str__(self):
-        return f'Name : {self.name}, {self.author}, {self.pub_date}, {self.category}'
+        return self.name
