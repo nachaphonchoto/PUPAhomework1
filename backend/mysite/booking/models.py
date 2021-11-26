@@ -11,6 +11,7 @@ class Book(models.Model):
     author = models.CharField(max_length=100)
     pub_date = models.CharField(max_length=100)
     category = models.CharField(max_length=3, choices=book_categories)
+    image = models.URLField(max_length=255, default='')
 
     def __str__(self):
         return self.name

@@ -20,7 +20,7 @@ class BookViewSet(viewsets.ModelViewSet):
             try:
                 dataSet = self.queryset.filter(Q(name__icontains=search_post))
             except Book.DoesNotExist:
-                raise Http404("Heroes does not exist")
+                raise Http404("Books does not exist")
         else:
             dataSet = self.queryset.all()
         heroes = self.serializer_class(dataSet, many=True)
