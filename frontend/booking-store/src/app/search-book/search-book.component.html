@@ -1,0 +1,15 @@
+<h2>My Heroes</h2>
+<ul class="books">
+    <li *ngFor="let book of books">
+        <span class="badge">{{book.id}}</span> {{book.name}}
+    </li>
+</ul>
+
+<div style="text-align:center">
+    <h1>
+        Primeng Angular AutoComplete Demo
+    </h1>
+</div>
+<div style="text-align:center">
+    <p-autoComplete [(ngModel)]="selectNumber" [suggestions]="output" (completeMethod)="search($event)" placeholder="Search" [dropdown]="true"></p-autoComplete>
+</div>

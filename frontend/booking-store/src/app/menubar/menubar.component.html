@@ -1,0 +1,13 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <i class="pi pi-book" style="font-size: 2rem;padding: 5px;"></i>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText placeholder="Search">
+        </span>
+    </ng-template>
+</p-menubar>
+
+<p-tabMenu [model]="items"></p-tabMenu>
