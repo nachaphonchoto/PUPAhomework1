@@ -1,0 +1,32 @@
+<app-menubar></app-menubar>
+<h1 style="text-align: center;"> ค้นหาหนังสือ </h1>
+
+<body>
+    <div id="search-component">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input #searchBox type="text" pInputText placeholder="ค้นหาหนังสือ..." (input)="search(searchBox.value)" />
+        </span>
+        <br>
+        <br>
+        <div class="search-result">
+            <div class="search-result" *ngFor="let book of books$ | async">
+                <a routerLink="/edit/{{book.id}}">
+                    <span class="bookbox">
+                        <img src="{{book.image}}" style="width: 100px;height: 100px;"> <br> {{book.name}}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+<!-- <p-autoComplete [(ngModel)]="book" [suggestions]="output" (completeMethod)="search($event)" field="name" [dropdown]="true" placeholder="Search">
+    <ng-template let-book pTemplate="item">
+        {{book.name}}
+    </ng-template>
+</p-autoComplete> -->

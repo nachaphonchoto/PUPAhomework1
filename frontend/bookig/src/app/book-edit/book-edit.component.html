@@ -1,0 +1,38 @@
+<app-menubar></app-menubar>
+<div *ngIf="book">
+
+    <h2>แก้ไขหนังสือ: {{book.name | uppercase}}</h2>
+    <br>
+    <div>
+        <label for="book-name">หนังสือ: </label>
+        <input type="text" pInputText placeholder="ชื่อหนังสือ" [(ngModel)]="book.name" />
+    </div>
+    <br>
+    <div>
+        <label for="book-author">นักเขียน: </label>
+        <input type="text" pInputText placeholder="ชื่อนักเขียน" [(ngModel)]="book.author" />
+    </div>
+    <br>
+    <div>
+        <label for="book-pub_date">วันที่ตีพิมพ์: </label>
+        <input type="text" pInputText placeholder="วันที่ตีพิมพ์" [(ngModel)]="book.pub_date" />
+    </div>
+    <br>
+    <div>
+        <label for="book-Category">ประเภท: </label>
+        <select class="custom-select" [(ngModel)]="book.category" style="width:200px; height:38px; background-color: #fff; border: 1px solid transparent; border-color: #CED4DA; color:#495057; ">
+            <option>--เลือก--</option>
+            <option value="FIC">นิยาย</option>
+            <option value="NFC">ไม่ใช่นิยาย</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="book-image">รูปภาพ: </label>
+        <input type="text" pInputText placeholder="URL ของรูปหนังสือ" [(ngModel)]="book.image" />
+    </div>
+    <br>
+
+    <button pButton pRipple type="button" label="บันทึก" class="p-button-rounded p-button-success" (click)="save()"></button> &nbsp;
+    <button pButton pRipple type="button" label="ยกเลิก" class="p-button-rounded p-button-danger" (click)="goBack()"></button>
+</div>

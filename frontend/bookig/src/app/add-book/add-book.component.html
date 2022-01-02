@@ -1,0 +1,37 @@
+<app-menubar></app-menubar>
+<div id="add-book">
+    <h2>เพิ่มหนังสือ : {{bookName | uppercase}} </h2>
+    <br>
+    <div>
+        <label for="book-name">หนังสือ: </label>
+        <input type="text" pInputText placeholder="ชื่อหนังสือ" [(ngModel)]="bookName" />
+    </div>
+
+    <br>
+    <div>
+        <label for="book-author">นักเขียน: </label>
+        <input type="text" pInputText placeholder="ชื่อนักเขียน" [(ngModel)]="bookAuthor" />
+    </div>
+    <br>
+    <div>
+        <label for="book-pub_date">วันที่ตีพิมพ์: </label>
+        <input type="text" pInputText placeholder="วันที่ตีพิมพ์" [(ngModel)]="bookPub_Date" />
+    </div>
+    <br>
+    <div>
+        <label for="book-Category">ประเภท: </label>
+        <select class="custom-select" [(ngModel)]="bookCategory" style="width:200px; height:38px; background-color: #fff; border: 1px solid transparent; border-color: #CED4DA; color:#495057; ">
+            <option>--เลือก--</option>
+            <option value="FIC">นิยาย</option>
+            <option value="NFC">ไม่ใช่นิยาย</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="book-image">รูปภาพ: </label>
+        <input type="text" pInputText placeholder="URL ของรูปหนังสือ" [(ngModel)]="bookImage" />
+    </div>
+    <br>
+
+    <button pButton pRipple type="button" label="เพิ่ม" class="p-button-rounded p-button-info" (click)="AddBook()"></button>
+</div>
