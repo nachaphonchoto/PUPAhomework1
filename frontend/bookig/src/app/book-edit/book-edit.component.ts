@@ -21,7 +21,9 @@ export class BookEditComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    if(confirm('คุณแน่ใจหรือไม่ ??')){
+      this.location.back();
+    }
   }
   
   save(): void {

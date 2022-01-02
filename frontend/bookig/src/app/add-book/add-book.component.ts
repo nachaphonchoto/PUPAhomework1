@@ -20,6 +20,7 @@ export class AddBookComponent implements OnInit {
   bookPub_Date: string | undefined;
   bookCategory: string | undefined;
   bookImage: string | undefined;
+  bookDescribe: string | undefined;
 
 
 
@@ -39,6 +40,7 @@ export class AddBookComponent implements OnInit {
       pub_date: this.bookPub_Date,
       category: this.bookCategory,
       image: this.bookImage,
+      describe: this.bookDescribe,
     }
     
     this.bookService.addBook(val).subscribe(res => {

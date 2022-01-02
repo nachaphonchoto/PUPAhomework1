@@ -1,0 +1,22 @@
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.book-box {
+    text-align: center;
+}
+
+img {
+    background-image: url(https://lh3.googleusercontent.com/proxy/6ER7IFq3yQgOMCUu_Ga9EdSMpt330SKngIse8NP3XK_RdTnqibOiOD5pYMrJdf3rSduQr5n0ewy6yWpjfkJXNljxrM8U1Qvn4o0S);
+}
+
+textarea {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-color: #CED4DA;
+    color: #495057;
+}

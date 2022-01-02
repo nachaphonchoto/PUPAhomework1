@@ -28,6 +28,9 @@ import { AddBookComponent } from './add-book/add-book.component';
 
 import {InputTextModule} from 'primeng/inputtext';
 
+import {CarouselModule} from 'primeng/carousel';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,8 @@ import {InputTextModule} from 'primeng/inputtext';
     TabMenuModule,
     TableModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,38 +1,60 @@
 <app-menubar></app-menubar>
 <div *ngIf="book">
 
-    <h2>แก้ไขหนังสือ: {{book.name | uppercase}}</h2>
-    <br>
-    <div>
-        <label for="book-name">หนังสือ: </label>
-        <input type="text" pInputText placeholder="ชื่อหนังสือ" [(ngModel)]="book.name" />
-    </div>
-    <br>
-    <div>
-        <label for="book-author">นักเขียน: </label>
-        <input type="text" pInputText placeholder="ชื่อนักเขียน" [(ngModel)]="book.author" />
-    </div>
-    <br>
-    <div>
-        <label for="book-pub_date">วันที่ตีพิมพ์: </label>
-        <input type="text" pInputText placeholder="วันที่ตีพิมพ์" [(ngModel)]="book.pub_date" />
-    </div>
-    <br>
-    <div>
-        <label for="book-Category">ประเภท: </label>
-        <select class="custom-select" [(ngModel)]="book.category" style="width:200px; height:38px; background-color: #fff; border: 1px solid transparent; border-color: #CED4DA; color:#495057; ">
-            <option>--เลือก--</option>
-            <option value="FIC">นิยาย</option>
-            <option value="NFC">ไม่ใช่นิยาย</option>
-        </select>
-    </div>
-    <br>
-    <div>
-        <label for="book-image">รูปภาพ: </label>
-        <input type="text" pInputText placeholder="URL ของรูปหนังสือ" [(ngModel)]="book.image" />
-    </div>
-    <br>
+    <div class="book-box">
+        <h2>แก้ไขหนังสือ: {{book.name | uppercase}}</h2>
 
-    <button pButton pRipple type="button" label="บันทึก" class="p-button-rounded p-button-success" (click)="save()"></button> &nbsp;
-    <button pButton pRipple type="button" label="ยกเลิก" class="p-button-rounded p-button-danger" (click)="goBack()"></button>
+        <table class="center">
+            <tr>
+                <th>
+                    <tr>
+                        <th><label for="book-name">หนังสือ: </label></th>
+                        <th><input type="text" pInputText placeholder="ชื่อหนังสือ" [(ngModel)]="book.name" /></th>
+                    </tr>
+                    <tr>
+                        <td><label for="book-author">นักเขียน: </label></td>
+                        <td><input type="text" pInputText placeholder="ชื่อนักเขียน" [(ngModel)]="book.author" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="book-pub_date">วันที่ตีพิมพ์: </label></td>
+                        <td><input type="text" pInputText placeholder="วันที่ตีพิมพ์" [(ngModel)]="book.pub_date" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="book-Category">ประเภท: </label></td>
+                        <td>
+                            <select class="custom-select" [(ngModel)]="book.category" style="width:200px; height:38px; background-color: #fff; border: 1px solid transparent; border-color: #CED4DA; color:#495057; ">
+                                <option>--เลือก--</option>
+                                <option value="FIC">นิยาย</option>
+                                <option value="DOC">สารคดี</option>
+                                <option value="SCI">วิทยาศาสตร์</option>
+                                <option value="HIS">ประวัติศาสตร์</option>
+                                <option value="TEC">เทคโนโลยี</option>
+                    </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="book-image">รูปภาพ: </label></td>
+                        <td><input type="text" pInputText placeholder="URL ของรูปหนังสือ" [(ngModel)]="book.image" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="book-Category">คำบรรยาย: </label></td>
+                        <td>
+                            <span class="p-float-label">
+                            <textarea inputId="textarea" rows="3" cols="25" [(ngModel)]="book.describe" pInputTextarea autoResize="autoResize"></textarea>
+                            </span>
+                        </td>
+                    </tr>
+                </th>
+
+                <th>
+                    <img src="{{book.image}}" style="width: 300px; height: 300px;">
+                </th>
+            </tr>
+            <tr>
+                <button pButton pRipple type="button" label="บันทึก" class="p-button-rounded p-button-success" (click)="save()"></button> &nbsp;
+                <button pButton pRipple type="button" label="ยกเลิก" class="p-button-rounded p-button-danger" (click)="goBack()"></button>
+            </tr>
+        </table>
+    </div>
 </div>

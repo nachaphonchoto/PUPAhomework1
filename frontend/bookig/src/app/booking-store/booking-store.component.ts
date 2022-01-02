@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api/menuitem';
 
+import { BookService } from '../book.service';
+
 @Component({
   selector: 'app-booking-store',
   templateUrl: './booking-store.component.html',
@@ -12,18 +14,47 @@ export class BookingStoreComponent implements OnInit {
 
   activeItem: MenuItem | undefined;
 
-  constructor() { }
+  books: any[] = [];
+
+  responsiveOptions: any;
+
+  constructor( private bookService:BookService ) { 
+    this.responsiveOptions = [
+      {
+          breakpoint: '1024px',
+          numVisible: 3,
+          numScroll: 3
+      },
+      {
+          breakpoint: '768px',
+          numVisible: 2,
+          numScroll: 2
+      },
+      {
+          breakpoint: '560px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ];
+   }
+
+  getBooks(): void {
+    this.bookService.getBooks()
+    .subscribe(books => this.books = books);
+  }
 
   ngOnInit() {
     this.items = [
-        {label: 'Home', icon: 'pi pi-fw pi-home'},
-        {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
-        {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
-        {label: 'Documentation', icon: 'pi pi-fw pi-file'},
-        {label: 'Settings', icon: 'pi pi-fw pi-cog'}
+        {label: 'หน้าหลัก', icon: 'pi pi-fw pi-home'},
+        {label: 'คิดแปป', icon: 'pi pi-fw pi-calendar'},
+        {label: 'คิดแปป', icon: 'pi pi-fw pi-pencil'},
+        {label: 'คิดแปป', icon: 'pi pi-fw pi-file'},
+        {label: 'คิดแปป', icon: 'pi pi-fw pi-cog'}
     ];
 
     this.activeItem = this.items[0];
+
+    this.getBooks()
   }
 
 }
