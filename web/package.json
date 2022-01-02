@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@angular/animations": "^13.0.2",
-    "primeicons": "^5.0.0",
-    "primeng": "^13.0.0"
-  }
-}
