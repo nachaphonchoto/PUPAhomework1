@@ -12,12 +12,12 @@ export class AdminComponent implements OnInit {
 
   books: any[] = [];
 
-  constructor( private bookService:BookService ) { }
-
   getBooks(): void {
     this.bookService.getBooks()
     .subscribe(books => this.books = books);
   }
+
+  constructor( private bookService:BookService ) { }
 
   delete(book: any): void {
     if(confirm('คุณแน่ใจหรือไม่ ??')){

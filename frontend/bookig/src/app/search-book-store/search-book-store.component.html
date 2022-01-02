@@ -1,0 +1,23 @@
+<p-tabMenu [model]="items" [activeItem]="items[1]"></p-tabMenu>
+
+<h1 style="text-align: center;"> ค้นหาหนังสือ </h1>
+
+<body>
+    <div id="search-component">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input #searchBox type="text" pInputText placeholder="ค้นหาหนังสือ..." (input)="search(searchBox.value)" />
+        </span>
+        <br>
+        <br>
+        <div class="search-result">
+            <div class="search-result" *ngFor="let book of books$ | async">
+                <a routerLink="/detail/{{book.id}}">
+                    <span class="bookbox">
+                        <img src="{{book.image}}" style="width: 200px;height: 200px;"> <br> {{book.name}}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>

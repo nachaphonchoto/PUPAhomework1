@@ -1,0 +1,12 @@
+<p-tabMenu [model]="items" [activeItem]="items[2]"></p-tabMenu>
+<h1>หนังสือทั้งหมด</h1>
+<div class="search-result" *ngFor="let book of books">
+    <br>
+    <a routerLink="/detail/{{book.id}}">
+        <span class="bookbox">
+            <img src="{{book.image}}" style="width: 200px;height: 200px;"> <br> {{book.name}}
+        </span>
+    </a>
+</div>
+
+<app-footer></app-footer>

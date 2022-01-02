@@ -4,37 +4,20 @@ import { BookService } from '../book.service';
 
 import { Observable, Subject } from 'rxjs';
 
+import { MenuItem } from 'primeng/api/menuitem';
+
 import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-
-
-
 @Component({
-  selector: 'app-search-book',
-  templateUrl: './search-book.component.html',
-  styleUrls: ['./search-book.component.css']
+  selector: 'app-search-book-store',
+  templateUrl: './search-book-store.component.html',
+  styleUrls: ['./search-book-store.component.css']
 })
-export class SearchBookComponent implements OnInit {
+export class SearchBookStoreComponent implements OnInit {
 
-  /* books: any[] = [];
-
-  book: any[] = [];
-
-  output: any[] = [];
-  
-  
-  search(event: { query: string; }) {
-    console.log('event',event);
-    this.output = this.books.filter(c => c.name.startsWith(event.query));
-  }
-
-  getBooks(): void {
-    this.bookService.getBooks()
-    .subscribe(books => this.books = books);
-  }
- */
+  items: MenuItem[] = [];
 
   books$!: Observable<any[]>;
   private searchTerms = new Subject<string>();
@@ -60,6 +43,12 @@ export class SearchBookComponent implements OnInit {
       // switch to new search observable each time the term changes
       switchMap((term: string) => this.bookService.searchBooks(term)),
     );
-  }
 
+    this.items = [
+      {label: 'หน้าหลัก', icon: 'pi pi-fw pi-home' , routerLink: ['/store']},
+      {label: 'ค้นหา', icon: 'pi pi-fw pi-search' , routerLink: ['/search_book'] },
+      {label: 'รายละเอียด', icon: 'pi pi-fw pi-book' , routerLink: ['/details']},
+      {label: 'เข้าสู่ระบบ', icon: 'pi pi-fw pi-sign-in' , routerLink: ['/admin']},
+    ];
+  }
 }

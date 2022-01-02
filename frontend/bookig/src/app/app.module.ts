@@ -29,6 +29,9 @@ import { AddBookComponent } from './add-book/add-book.component';
 import {InputTextModule} from 'primeng/inputtext';
 
 import {CarouselModule} from 'primeng/carousel';
+import { BookDetailsComponent } from './book-details/book-details.component';
+import { SearchBookStoreComponent } from './search-book-store/search-book-store.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import {CarouselModule} from 'primeng/carousel';
     MenubarComponent,
     BookDetailComponent,
     BookEditComponent,
-    AddBookComponent
+    AddBookComponent,
+    BookDetailsComponent,
+    SearchBookStoreComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

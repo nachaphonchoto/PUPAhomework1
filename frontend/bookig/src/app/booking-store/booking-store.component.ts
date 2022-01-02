@@ -45,11 +45,10 @@ export class BookingStoreComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-        {label: 'หน้าหลัก', icon: 'pi pi-fw pi-home'},
-        {label: 'คิดแปป', icon: 'pi pi-fw pi-calendar'},
-        {label: 'คิดแปป', icon: 'pi pi-fw pi-pencil'},
-        {label: 'คิดแปป', icon: 'pi pi-fw pi-file'},
-        {label: 'คิดแปป', icon: 'pi pi-fw pi-cog'}
+        {label: 'หน้าหลัก', icon: 'pi pi-fw pi-home' , routerLink: ['/store']},
+        {label: 'ค้นหา', icon: 'pi pi-fw pi-search' , routerLink: ['/search_book'] },
+        {label: 'รายละเอียด', icon: 'pi pi-fw pi-book' , routerLink: ['/details']},
+        {label: 'เข้าสู่ระบบ', icon: 'pi pi-fw pi-sign-in' , routerLink: ['/admin']},
     ];
 
     this.activeItem = this.items[0];

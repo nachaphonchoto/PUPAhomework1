@@ -14,6 +14,8 @@ export class BookEditComponent implements OnInit {
 
   @Input() book?: any;
 
+  
+
   getBook(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.bookService.getBook(id)
